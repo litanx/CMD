@@ -5,6 +5,25 @@
  * @brief          : Command process interface.
  * @author		   : Diego B.	Oct-18
  ******************************************************************************
+  Revisions can be found here:
+  https://github.com/litanx/CMD/
+
+  Copyright (C) diegobailos , <diegobailos@gmail.com>
+
+                                GPLv3 License
+
+  This program is free software: you can redistribute it and/or modify it under
+  the terms of the GNU General Public License as published by the Free Software
+  Foundation, either version 3 of the License, or (at your option) any later
+  version.
+
+  This program is distributed in the hope that it will be useful, but WITHOUT ANY
+  WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+  PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License along with
+  this program.  If not, see <http://www.gnu.org/licenses/>.
+*********************************************************************************
 
  ==============================================================================
  ##### How to use this driver #####
@@ -29,9 +48,18 @@
  * 		The driver will write the echo messages though this function.
  *
  * void CMD_process(CMD_HandleTypeDef *cmd) {}
- * 		This is the callback function to process the commands stored in the
- * 		CMD_HandleTypeDef structure.
+ * 		Parse and process commands. This is the callback function to process
+ * 		the indoming commands stored in the CMD_HandleTypeDef structure.
  *
+ * In the main function call:
+ * 	CMD_Init(&cmdHandler1);
+ * 	CMD_Init(&cmdHandler2);
+ * 	CMD_Init(&cmdHandler...);
+ *
+ * In the while(1) loop:
+ * 	CMD_handle(&cmdHandler1);
+ * 	CMD_handle(&cmdHandler2);
+ * 	CMD_handle(&cmdHandler...);
  ******************************************************************************
  */
 
